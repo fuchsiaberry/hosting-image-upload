@@ -78,8 +78,15 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+
 production:
-  <<: *default
-  database: hosting_image_upload_production
-  username: hosting_image_upload
-  password: <%= ENV["HOSTING_IMAGE_UPLOAD_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+# production:
+#   <<: *default
+#   database: hosting_image_upload_production
+#   username: hosting_image_upload
+#   password: <%= ENV["HOSTING_IMAGE_UPLOAD_DATABASE_PASSWORD"] %>

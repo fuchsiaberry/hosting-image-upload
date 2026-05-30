@@ -8,10 +8,7 @@
     <strong>Body:</strong>
     <%= article.body %>
   </p>
-
-  <% if @article.photo.key   %>
-   <%=  cl_image_tag @article.photo.key, height: 300, width: 300, crop: :fill if @article.photo.attached? %>
-   <% end %>
+  <%=  cl_image_tag @article.photo.key, height: 300, width: 300, crop: :fill if @article.photo.attached? %>
 
 
 </div>

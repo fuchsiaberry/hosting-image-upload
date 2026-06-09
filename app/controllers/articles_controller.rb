@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
   # GET /articles
   def index
     @articles = Article.all
-    # new comment
   end
 
   # GET /articles/1
